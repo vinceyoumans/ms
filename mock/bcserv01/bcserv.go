@@ -10,7 +10,6 @@ import (
 )
 
 func BCServ01(urlEndPoint string) {
-	// Create an example update request
 	updateRequest := UpdateStatusRequest{
 		ServiceStatuses: []ServiceStatus{
 			{
@@ -23,15 +22,12 @@ func BCServ01(urlEndPoint string) {
 		},
 	}
 
-	// Convert the request to JSON
 	requestBody, err := json.Marshal(updateRequest)
 	if err != nil {
 		fmt.Println("Error encoding JSON:", err)
 		return
 	}
 
-	// Define the API endpoint
-	//apiURL := "http://example.com/v1/status"
 	apiURL := urlEndPoint
 
 	// Create a custom Dialer with a timeout
@@ -45,22 +41,18 @@ func BCServ01(urlEndPoint string) {
 		DialContext: dialer.DialContext,
 	}
 
-	// Create an HTTP client with the custom Transport
 	client := &http.Client{
 		Transport: transport,
 	}
 
-	// Create a PUT request
 	request, err := http.NewRequest("PUT", apiURL, bytes.NewBuffer(requestBody))
 	if err != nil {
 		fmt.Println("Error creating request:", err)
 		return
 	}
 
-	// Set the request headers
 	request.Header.Set("Content-Type", "application/json")
 
-	// Make the request
 	response, err := client.Do(request)
 	if err != nil {
 		fmt.Println("Error making request:", err)
