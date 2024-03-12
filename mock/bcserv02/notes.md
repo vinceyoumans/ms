@@ -1,0 +1,119 @@
+
+write a golang function with this signature:
+func putStatusUpdate(url, serviceStatus) responce
+
+serviceStatus is a struct:
+```
+type ServiceStatus struct {
+	ServiceID         string `json:"serviceID"`
+	ServiceName       string `json:"serviceName"`
+	HmsHSI            int    `json:"hmsHSI"`
+	ServiceInstanceID string `json:"serviceInstanceID"`
+}
+```
+
+
+this is the EndPoint openAPI
+```json
+       "/v1/status": {
+            "put": {
+                "tags": [
+                    "Status Operations"
+                ],
+                "summary": "Update status of multiple services",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "serviceStatuses": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "required": [
+                                                "serviceID",
+                                                "hmsHSI"
+                                            ],
+                                            "properties": {
+                                                "serviceID": {
+                                                    "type": "string"
+                                                },
+                                                "serviceName": {
+                                                    "type": "string"
+                                                },
+                                                "hmsHSI": {
+                                                    "type": "integer",
+                                                    "enum": [
+                                                        "0",
+                                                        "1",
+                                                        "2",
+                                                        "3",
+                                                        "4"
+                                                    ]
+                                                },
+                                                "serviceInstanceID": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Status updated successfully"
+                    },
+                    "404": {
+                        "description": "Services not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "required": [
+                                        "message",
+                                        "services"
+                                    ],
+                                    "properties": {
+                                        "message": {
+                                            "description": "A human readable error message",
+                                            "type": "string",
+                                            "example": "Few services were not found"
+                                        },
+                                        "services": {
+                                            "description": "List of services that were not found",
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "serviceID": {
+                                                        "type": "string"
+                                                    },
+                                                    "serviceName": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Unexpected error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+```

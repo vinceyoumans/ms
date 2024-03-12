@@ -1,0 +1,95 @@
+{
+  "bc01ServiceStatus": [
+    {
+      "cadence": 8,
+      "serviceStatuse": {
+        "serviceID": "randomID1",
+        "serviceName": "randomService1",
+        "hmsHSI": 4,
+        "serviceInstanceID": "instance123"
+      }
+    },
+    {
+      "cadence": 3,
+      "serviceStatuse": {
+        "serviceID": "randomID2",
+        "serviceName": "randomService2",
+        "hmsHSI": 1,
+        "serviceInstanceID": "instance456"
+      }
+    },
+    {
+      "cadence": 5,
+      "serviceStatuse": {
+        "serviceID": "randomID3",
+        "serviceName": "randomService3",
+        "hmsHSI": 3,
+        "serviceInstanceID": "instance789"
+      }
+    },
+    {
+      "cadence": 10,
+      "serviceStatuse": {
+        "serviceID": "randomID4",
+        "serviceName": "randomService4",
+        "hmsHSI": 2,
+        "serviceInstanceID": "instanceABC"
+      }
+    },
+    {
+      "cadence": 7,
+      "serviceStatuse": {
+        "serviceID": "randomID5",
+        "serviceName": "randomService5",
+        "hmsHSI": 5,
+        "serviceInstanceID": "instanceDEF"
+      }
+    },
+    {
+      "cadence": 2,
+      "serviceStatuse": {
+        "serviceID": "randomID6",
+        "serviceName": "randomService6",
+        "hmsHSI": 1,
+        "serviceInstanceID": "instanceGHI"
+      }
+    },
+    {
+      "cadence": 6,
+      "serviceStatuse": {
+        "serviceID": "randomID7",
+        "serviceName": "randomService7",
+        "hmsHSI": 3,
+        "serviceInstanceID": "instanceJKL"
+      }
+    },
+    {
+      "cadence": 9,
+      "serviceStatuse": {
+        "serviceID": "randomID8",
+        "serviceName": "randomService8",
+        "hmsHSI": 4,
+        "serviceInstanceID": "instanceMNO"
+      }
+    },
+    {
+      "cadence": 4,
+      "serviceStatuse": {
+        "serviceID": "randomID9",
+        "serviceName": "randomService9",
+        "hmsHSI": 2,
+        "serviceInstanceID": "instancePQR"
+      }
+    },
+    {
+      "cadence": 1,
+      "serviceStatuse": {
+        "serviceID": "randomID10",
+        "serviceName": "randomService10",
+        "hmsHSI": 5,
+        "serviceInstanceID": "instanceSTU"
+      }
+    }
+  ]
+}
+
